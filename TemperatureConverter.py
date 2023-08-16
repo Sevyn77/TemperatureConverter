@@ -53,11 +53,18 @@ def input_option(hint):
         else:
             print("Invalid Unit!")
 
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
 def input_temp(hint):
     while True:
         print(hint)
         my_str = input()
-        if my_str.isnumeric():
+        if is_float(my_str):
             my_temp = float(my_str)
             return my_temp
         else:
@@ -75,7 +82,7 @@ while True:
     else:
         temp = input_temp("Enter the temperature value:")
         result = temperature_converter(temp, input_unit, output_unit)
-        print(f"{temp}{input_unit} is {result}{output_unit}")
+        print(f"{temp}{input_unit} is {round(result, 2)}{output_unit}")
 
         option = input("Do you want to quit (Q) or any other key to keep going?")
 
