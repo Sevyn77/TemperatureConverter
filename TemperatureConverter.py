@@ -84,7 +84,7 @@ while True:
         result = temperature_converter(temp, input_unit, output_unit)
         print(f"{temp}{input_unit} is {round(result, 2)}{output_unit}")
 
-        option = input("Do you want to quit (Q) or any other key to keep going?")
+        option = input("Do you want to quit (Q) or any other key to keep going?").upper()
 
         if option == 'Q':
             print("Have a Great Day!")
